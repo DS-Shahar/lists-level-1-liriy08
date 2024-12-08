@@ -1,38 +1,30 @@
-package homework;
+package homeWork0812;
+
+
 
 public class q1 {
 
-	public static Node<Integer> q1(int x,int y,int n)
+	public static Node<Integer> q1(int []a )
 	{
-		Node<Integer> a = new Node<Integer>((int)(Math.random()*(y-x+1))+x);
-		Node<Integer> b=a;
-		for(int i=1; i<n; i++)
+		if(a.length==0)
 		{
-			b.setNext(new Node<Integer>((int)(Math.random()*(y-x+1))+x));
-			b=b.getNext();
+			return null;
 		}
-		return a;
-	}
-	
-		public static int count2(Node<Integer> p, int x)
-		{ int count=0;
-			while(p!=null)
+		int i=0;
+		Node<Integer> b = new Node<Integer> (a[0]);
+		Node<Integer> c=b;
+		
+			for(i=1; i<a.length; i++)
 			{
-				if(p.getValue()==x)
-				{
-					count++;
-				}
-				p=p.getNext();
+			c.setNext(new Node<Integer>(a[i]));
+			c=c.getNext();
 			}
-			return count;
-		}
+		
+		return b;
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-int x=1; int y=20; int n=20;
- Node<Integer> p = q1(x,y, n);
- System.out.println(p);
- int answer= count2(p, 13);
- System.out.println(answer);
+
 	}
 
 }
